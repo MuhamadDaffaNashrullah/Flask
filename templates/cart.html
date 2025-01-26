@@ -41,11 +41,10 @@
                 <ul class="right_side">
                   <li>
                     <a href="tracking.html">
-                      track order
                     </a>
                   </li>
                   <li>
-                    <a href="contact.html">
+                    <a href="/contact">
                       Contact Us
                     </a>
                   </li>
@@ -151,7 +150,7 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="/contact">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -246,32 +245,19 @@
                   <td>
                     <div class="product_count">
                       <input
-                        type="text"
+                        type="number"
                         name="qty"
-                        id="sst"
-                        maxlength="12"
+                        id="sst1"
+                        min="0"
                         value="1"
                         title="Quantity:"
                         class="input-text qty"
+                        onchange="updateTotal(1)"
                       />
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                        class="increase items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-up"></i>
-                      </button>
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                        class="reduced items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-down"></i>
-                      </button>
                     </div>
                   </td>
                   <td>
-                    <h5>Rp.5000</h5>
+                    <h5 id="total1">Rp.5000</h5>
                   </td>
                 </tr>
                 <tr>
@@ -294,32 +280,19 @@
                   <td>
                     <div class="product_count">
                       <input
-                        type="text"
+                        type="number"
                         name="qty"
-                        id="sst"
-                        maxlength="12"
+                        id="sst2"
+                        min="0"
                         value="1"
                         title="Quantity:"
                         class="input-text qty"
+                        onchange="updateTotal(2)"
                       />
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                        class="increase items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-up"></i>
-                      </button>
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                        class="reduced items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-down"></i>
-                      </button>
                     </div>
                   </td>
                   <td>
-                    <h5>Rp.5000</h5>
+                    <h5 id="total2">Rp.5000</h5>
                   </td>
                 </tr>
                 <tr>
@@ -342,32 +315,19 @@
                   <td>
                     <div class="product_count">
                       <input
-                        type="text"
+                        type="number"
                         name="qty"
-                        id="sst"
-                        maxlength="12"
+                        id="sst3"
+                        min="0"
                         value="1"
                         title="Quantity:"
                         class="input-text qty"
+                        onchange="updateTotal(3)"
                       />
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                        class="increase items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-up"></i>
-                      </button>
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                        class="reduced items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-down"></i>
-                      </button>
                     </div>
                   </td>
                   <td>
-                    <h5>Rp.5000</h5>
+                    <h5 id="total3">Rp.5000</h5>
                   </td>
                 </tr>
                 <tr class="bottom_button">
@@ -391,7 +351,7 @@
                     <h5>Subtotal</h5>
                   </td>
                   <td>
-                    <h5>Rp.15000</h5>
+                    <h5 id="subtotal">Rp.15000</h5>
                   </td>
                 </tr>
                 <tr class="shipping_area">
@@ -439,7 +399,7 @@
                   <td>
                     <div class="checkout_btn_inner">
                       <a class="gray_btn" href="/">Continue Shopping</a>
-                      <a class="main_btn" href="#">Proceed to checkout</a>
+                      <a class="main_btn" href="/checkout">Proceed to checkout</a>
                     </div>
                   </td>
                 </tr>
@@ -510,10 +470,6 @@
           </div>
         </div>
         <div class="footer-bottom row align-items-center">
-          <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          <div class="col-lg-4 col-md-12 footer-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -526,20 +482,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/stellar.js"></script>
-    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="vendors/isotope/isotope-min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendors/counter-up/jquery.counterup.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/stellar.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/lightbox/simpleLightbox.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/isotope/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/isotope/isotope-min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/mail-script.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/jquery-ui/jquery-ui.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/counter-up/jquery.waypoints.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendors/counter-up/jquery.counterup.js')}}"></script>
+    <script src="{{url_for('static', filename='js/theme.js')}}"></script>
+
+    <script>
+      function updateTotal(id) {
+        const qty = document.getElementById('sst' + id).value;
+        const price = 5000;
+        const total = qty * price;
+        document.getElementById('total' + id).innerHTML = 'Rp.' + total;
+        
+        // Update subtotal
+        const qty1 = document.getElementById('sst1').value;
+        const qty2 = document.getElementById('sst2').value; 
+        const qty3 = document.getElementById('sst3').value;
+        const subtotal = (qty1 * price) + (qty2 * price) + (qty3 * price);
+        document.getElementById('subtotal').innerHTML = 'Rp.' + subtotal;
+      }
+    </script>
+
   </body>
 </html>
